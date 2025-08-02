@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('🎈 App Name')
+st.title('🎈 Recession Forecasting')
 
-st.write('Hello world!')
+st.write('This is a Hybrid ML Forecast of the Recession')
