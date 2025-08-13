@@ -2,4 +2,4 @@ import streamlit as st
 
 st.title('🎈Economic Health Index')
 
-st.write('This is a Hybrid ML Forecast of the Recession')
+st.write('Economic Health Scoring Based on Recession Indicators')
