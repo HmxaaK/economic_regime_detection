@@ -12,7 +12,7 @@ from preprocessing import feature_engineering,train_test_split
 from hyperparameter_tuning import hyperparameter_tuning
 from evaluation import model_performance,temporal_mapping
 
-data = pd.read_csv('Recession Indicators(Sheet1).csv',index_col='Date',
+data = pd.read_csv('data/Recession Indicators(Sheet1).csv',index_col='Date',
                    parse_dates=True).dropna()
 X,y = feature_engineering(data)
 X_train,y_train,X_test,y_test = train_test_split(X,y)
