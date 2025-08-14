@@ -1,3 +1,7 @@
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+import pandas as pd
+import numpy as np
+
 def feature_engineering(data_set):
   #specifying the target and features
   target = 'USREC'
