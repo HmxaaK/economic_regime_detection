@@ -1,4 +1,4 @@
-# Economic Regime Detection & Nowcasting
+# Economic Regime Detection 
 
 This project uses **Logistic Regression** on macroeconomic indicators to nowcast the current economic regime (recession or expansion) and compute an **Economic Health Score**.
 
