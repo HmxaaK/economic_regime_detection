@@ -1,22 +1,41 @@
-# 📦 Machine Learning Recession Forecast
+# Economic Regime Detection & Nowcasting
 
-Hybrid Machine Learning Forecasting App
+This project uses **Logistic Regression** on macroeconomic indicators to nowcast the current economic regime (recession or expansion) and compute an **Economic Health Score**.
 
-## Demo App
+---
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://hybrid_ml_forecast .streamlit.app/)
+## 📌 Problem
+The National Bureau of Economic Research (NBER) declares U.S. recessions **months after they start**. This lag makes real-time decision-making difficult for policymakers, investors, and businesses.
 
-## GitHub Codespaces
+## 💡 Solution
+We use historical monthly macroeconomic indicators and NBER labels to train a logistic regression model. This model can:
+- Estimate the probability of being in a recession *this month*.
+- Convert that probability into an **Economic Health Score** (0–100 scale).
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/app-starter-kit?quickstart=1)
+---
 
-## Section Heading
+## 🛠 Features
+- Feature engineering with polynomial terms, logs, and differences.
+- Logistic regression with time-series cross-validation and hyperparameter tuning.
+- Probability-to-score transformation for intuitive interpretation.
+- Historical backtesting with visualizations.
 
-This is filler text, please replace this with text for this section.
+---
 
-## Further Reading
+## 📂 Project Structure
+- `data/` → CSV datasets  
+- `src/` → ML pipeline code  
+- `app/` → Streamlit app (future)  
+- `requirements.txt` → Python dependencies  
+- `README.md` → Documentation  
 
-This is filler text, please replace this with a explanatory text about further relevant resources for this repo
-- Resource 1
-- Resource 2
-- Resource 3
+---
+
+## 🚀 Usage
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/HmxaaK/economic_regime_detection.git
+cd economic_regime_detection
+
+
