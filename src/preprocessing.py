@@ -26,7 +26,7 @@ def feature_engineering(data_set):
   log_diff.columns = ['Logdiff' + item for item in log_names]
   #Final Features set
   X = pd.concat([poly_features,log_features,log_diff],axis=1).dropna()
-  y = data[target]
+  y = data_set[target]
   y = y.loc[X.index]
   return X,y
 
