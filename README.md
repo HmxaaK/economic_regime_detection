@@ -42,7 +42,7 @@ cd economic_regime_detection
 ```bash
 pip install -r requirements.txt
 ```
-3. Run the model
+3. **Run the model**
 ```bash
 python src/model.py
 ```
