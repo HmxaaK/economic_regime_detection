@@ -36,7 +36,7 @@ We use historical monthly macroeconomic indicators and NBER labels to train a lo
 1. **Clone the repository**
 ```bash
 git clone https://github.com/HmxaaK/economic_regime_detection.git
-cd economic_regime_detection```
+cd economic_regime_detection
 ```
 2. **Install dependencies**
 ```bash
