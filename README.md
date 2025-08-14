@@ -47,6 +47,11 @@ pip install -r requirements.txt
 python src/model.py
 ```
 
+## Example Output
+()
+
+## Author
+Hamza
 
 
 
