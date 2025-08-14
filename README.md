@@ -10,7 +10,7 @@ The National Bureau of Economic Research (NBER) declares U.S. recessions **month
 ## 💡 Solution
 We use historical monthly macroeconomic indicators and NBER labels to train a logistic regression model. This model can:
 - Estimate the probability of being in a recession *this month*.
-- Convert that probability into an **Economic Health Score** (0–100 scale).
+- Convert that probability into an **Economic Health Score** (0–10 scale).
 
 ---
 
