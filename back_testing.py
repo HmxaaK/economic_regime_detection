@@ -1,5 +1,6 @@
 from matplotlib import pyplot as plt
 import plotly.express as px
+import numpy as np
 
 def temporal_mapping(probs, labels, window=39):
     # --- 1. Matplotlib plot ---
