@@ -71,7 +71,7 @@ st.write("- Convert that probability into an Economic Health Score (0–10 scale
 
 
 fig1, fig2 = temporal_mapping(logit_probs, y_test)
-
+st.subheader('Economic Score')
 st.plotly_chart(fig2, use_container_width=True)
 
 
