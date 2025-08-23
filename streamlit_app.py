@@ -1,21 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-from matplotlib import pyplot as plt
-from sklearn.preprocessing import PolynomialFeatures, StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import (
-    precision_score, recall_score, precision_recall_curve,
-    f1_score, make_scorer,
-    confusion_matrix, ConfusionMatrixDisplay
-)
-from sklearn.model_selection import TimeSeriesSplit, GridSearchCV
-import plotly.express as px
-
-# ✅ Import your custom modules from src/
-from src.preprocessing import feature_engineering, train_test_split
-from src.hyperparameter_tuning import hyperparameter_tuning
-from src.evaluation import model_performance, temporal_mapping
 
 # ---------------- Streamlit UI ----------------
 st.title('Economic Health Index')
