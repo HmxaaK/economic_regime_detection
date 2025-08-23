@@ -79,6 +79,4 @@ X_test_scaled = scaler.transform(X_test)
 logit_preds = model.predict(X_test_scaled)
 logit_probs = model.predict_proba(X_test_scaled)
 
-# Evaluation
-model_performance(y_test, logit_preds)
 temporal_mapping(logit_probs, y_test)
