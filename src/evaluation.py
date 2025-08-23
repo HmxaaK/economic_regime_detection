@@ -17,22 +17,33 @@ def model_performance(y_actual,y_predict):
   print (f'F1 : {f1:.2f}')
   disp_cm.plot()
   plt.show()
+  
 def temporal_mapping(probs, labels):
-    probs_recession = probs[:,1]
-    plt.figure(figsize=(12, 6))
-    plt.plot(labels.index, probs_recession, label="Probability of Recession")
+    probs_recession = probs[:, 1]
+
+    # --- Matplotlib plot ---
+    fig1, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(labels.index, probs_recession, label="Probability of Recession")
     mask = (labels == 1).to_numpy()
-    plt.fill_between(
+    ax.fill_between(
         labels.index, 0, probs_recession,
         where=mask,
         color='grey', label="NBER = Recession"
     )
-    plt.ylim(0,1)
-    plt.ylabel("Probability")
-    plt.legend()
-    plt.show()
+    ax.set_ylim(0, 1)
+    ax.set_ylabel("Probability")
+    ax.legend()
 
-    economic_health_scores = np.round((probs[-39:, 0] * 10),2)
-    fig = px.line(x=labels.index[-39:],y=economic_health_scores,
-                  labels={"x":"","y":"Economic Health Score"})
-    fig.show()
+    st.subheader("Recession Probability vs NBER Labels")
+    st.pyplot(fig1)   # ✅ renders in Streamlit
+
+    # --- Plotly plot ---
+    economic_health_scores = np.round((probs[-39:, 0] * 10), 2)
+    fig2 = px.line(
+        x=labels.index[-39:], 
+        y=economic_health_scores,
+        labels={"x": "", "y": "Economic Health Score"},
+        title="Economic Health Score (0–10)"
+    )
+
+    st.plotly_chart(fig2, use_container_width=True)   
