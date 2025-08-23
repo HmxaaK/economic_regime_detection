@@ -1,5 +1,5 @@
 import streamlit as st
-from backtesting.py import temporal_mapping
+from back_testing.py import temporal_mapping
 # ---------------- Streamlit UI ----------------
 st.title('Economic Health Index')
 st.subheader('Macroeconomic Indicators for Regime Classification')
@@ -41,3 +41,4 @@ st.subheader('Solution')
 st.write("We use historical monthly macroeconomic indicators and NBER labels to train a logistic regression model. This model can:")
 st.write("- Estimate the probability of being in a recession this month.")
 st.write("- Convert that probability into an Economic Health Score (0–10 scale).")
+
