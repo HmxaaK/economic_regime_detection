@@ -31,20 +31,17 @@ current_score = np.round((logit_probs[-1, 1] * 10),2)
 # ---------------- Streamlit UI ----------------
 # Title & Description
 st.title("📊 Economic Health Index")
+# Latest Score
+st.metric("Latest Score Based on Current Data", current_score)
 st.write("""
 We use historical monthly macroeconomic indicators and **NBER recession labels** 
 to train a Logistic Regression model. This model can:
 - Estimate the probability of being in a recession this month.  
 - Convert that probability into an **Economic Health Score (0–10 scale)**.  
 """)
-
-# Latest Score
-st.metric("Latest Score Based on Current Data", current_score)
-
 # Charts
 st.subheader("📈 Economic Health Score Over Time")
 st.plotly_chart(fig2, use_container_width=True)
-
 st.subheader("🔍 Probability of Recession (Historical vs. Predicted)")
 st.pyplot(fig1)
 
