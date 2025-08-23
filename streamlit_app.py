@@ -28,7 +28,7 @@ logit_probs = model.predict_proba(X_test_scaled)
 fig1, fig2 = temporal_mapping(logit_probs, y_test)
 current_score = np.round((logit_probs[-1, 1] * 10),2)
 previous_score = np.round((logit_probs[-2, 1] * 10),2)
-delta_value = current_score - previous_score
+delta_value = Round(current_score - previous_score,2)
 # ---------------- Streamlit UI ----------------
 # Title & Description
 st.title("📊 Economic Health Index")
@@ -36,8 +36,8 @@ st.title("📊 Economic Health Index")
 st.metric(
     label="Latest Score Based on Current Data",
     value=current_score,
-    delta=delta_value,        # change compared to last month/quarter
-    delta_color="normal"      # options: "normal", "inverse", "off"
+    delta=delta_value,
+    delta_color="normal"      
 )
 
 st.write("""
