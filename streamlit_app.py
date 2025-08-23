@@ -26,8 +26,8 @@ X_test_scaled = scaler.transform(X_test)
 logit_preds = model.predict(X_test_scaled)
 logit_probs = model.predict_proba(X_test_scaled)
 fig1, fig2 = temporal_mapping(logit_probs, y_test)
-current_score = np.round((logit_probs[-1, 1] * 10),2)
-previous_score = np.round((logit_probs[-2, 1] * 10),2)
+current_score = np.round((logit_probs[-1, 0] * 10),2)
+previous_score = np.round((logit_probs[-2, 0] * 10),2)
 delta_value = round(current_score - previous_score,2)
 # ---------------- Streamlit UI ----------------
 # Title & Description
