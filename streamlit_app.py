@@ -27,7 +27,8 @@ logit_preds = model.predict(X_test_scaled)
 logit_probs = model.predict_proba(X_test_scaled)
 fig1, fig2 = temporal_mapping(logit_probs, y_test)
 current_score = np.round((logit_probs[-1, 1] * 10),2)
-
+previous_score = np.round((logit_probs[-2, 1] * 10),2)
+delta_value = current_score - previous_score
 # ---------------- Streamlit UI ----------------
 # Title & Description
 st.title("📊 Economic Health Index")
