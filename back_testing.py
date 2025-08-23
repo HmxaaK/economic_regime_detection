@@ -1,3 +1,6 @@
+from matplotlib import pyplot as plt
+import plotly.express as px
+
 def temporal_mapping(probs, labels, window=39):
     # --- 1. Matplotlib plot ---
     probs_recession = probs[:, 1]
