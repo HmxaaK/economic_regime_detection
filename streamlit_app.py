@@ -32,7 +32,13 @@ current_score = np.round((logit_probs[-1, 1] * 10),2)
 # Title & Description
 st.title("📊 Economic Health Index")
 # Latest Score
-st.metric("Latest Score Based on Current Data", current_score)
+st.metric(
+    label="Latest Score Based on Current Data",
+    value=current_score,
+    delta=delta_value,        # change compared to last month/quarter
+    delta_color="normal"      # options: "normal", "inverse", "off"
+)
+
 st.write("""
 We use historical monthly macroeconomic indicators and **NBER recession labels** 
 to train a Logistic Regression model. This model can:
