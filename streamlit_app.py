@@ -25,10 +25,12 @@ model = LogisticRegression(**best_params).fit(X_train_scaled,y_train)
 X_test_scaled = scaler.transform(X_test)
 logit_preds = model.predict(X_test_scaled)
 logit_probs = model.predict_proba(X_test_scaled)
-
+fig1, fig2 = temporal_mapping(logit_probs, y_test)
+current_score = logit_probs[-1, 1]
 
 # ---------------- Streamlit UI ----------------
 st.title('Economic Health Index')
+st.metric('Latest Score Based on Current Data',current_score)
 st.subheader('Macroeconomic Indicators for Regime Classification')
 st.write(
     "Economic regimes are characterized by dynamic complexity and the movement of variables. "
@@ -69,8 +71,6 @@ st.write("We use historical monthly macroeconomic indicators and NBER labels to 
 st.write("- Estimate the probability of being in a recession this month.")
 st.write("- Convert that probability into an Economic Health Score (0–10 scale).")
 
-
-fig1, fig2 = temporal_mapping(logit_probs, y_test)
 st.subheader('Economic Score')
 st.plotly_chart(fig2, use_container_width=True)
 
