@@ -1,5 +1,5 @@
 import streamlit as st
-from back_testing.py import temporal_mapping
+from back_testing import temporal_mapping
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
